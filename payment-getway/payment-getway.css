@@ -184,16 +184,19 @@ input:focus {
 /* ........................................................
 MEDIA QUARIES
 ............................................................*/
-@media only screen and (max-width:768px){
+@media screen and (min-width:768px){
     .main{
         width: 70%;
         height: 70vh;
     }
+    .pay{
+        top: 85%;
+    }
 }
-@media only screen and (max-width:425px){
+@media screen and (max-width:425px){
     .main{
         width: 95%;
-        height: 80vh;
+        height: 85vh;
         display: block;
     }
     .side-nav{
@@ -207,5 +210,8 @@ MEDIA QUARIES
     }
     .pics-cont, .side-nav-footer{
         display: none;
+    }
+    .pay{
+        top: 75%;
     }
 }

@@ -6,6 +6,11 @@ body{
     padding: 0%;
     margin: 0%;
 }
+h1{
+    font-size: 4em;
+    margin: 0%;
+    text-transform: uppercase;
+}
 .body{
     display: flex;
     justify-content: center;
@@ -15,6 +20,7 @@ body{
     background-color: #333333;
     color:#fff;
     padding: 10px;
+    text-align: center;
 }
 
 #countDown{
@@ -26,20 +32,25 @@ body{
 .yr-mnth, .days, .hours, .mins, .secs{
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     flex-direction: column;
-    background-color: aqua;
     padding: 10px;
     border-radius: 5px;
-    color: #333333;
     text-align: center;
+} 
+.days > p, .hours > p, .mins > p, .secs > p{
+    font-size: 4em;
+    color: #333333;
     font-weight: bold;
     text-transform: uppercase;
     font-family: "Montserrat", sans-serif;
-    /* letter-spacing: 5px; */
-} 
+}
+.yr > p, .mnth >p{
+    font-size: 2em;
+    font-weight: bold;
+}
 .name{
     color: #ffffff;
+    font-size: .5em;
 }
 .yr-mnth {
     background: #2186FF;
@@ -59,5 +70,14 @@ body{
   .secs {
     background:  #E10A0A;
   }
-   
+ 
+  @media screen and (max-width:320px){
+      h1{
+          font-size: 1em;
+      }
+      .yr >p, .mnth >p, .days > p, .hours > p, .mins > p, .secs > p{
+          font-size: 1.5em;
+      }
+      
+  }
   

@@ -3,31 +3,38 @@ const year = new Date().getFullYear();
 const countDownTo = new Date(year, 6, 16);
 
  const cdDate = document.getElementById("cdDate");
- cdDate.innerHTML = countDownTo.getDate();
+ cdDate.innerHTML = countDownTo.getDate() + '/' + countDownTo.getMonth() + '/' + year;
 
 let countDown = setInterval(() => {
     /* audio24 = document.getElementById("player").play(); */
     
     const today = new Date().getTime();
     const diff = countDownTo.getTime() - today;
-    
-    let cdYear = Math.floor(diff/31622400000);
-    let cdMonth = Math.floor(diff/2592000000);
-    let cdDays = Math.floor(diff / (1000 * 60 * 60 * 24));
-    let cdHours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let cdMins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    let cdSecs = Math.floor((diff % (1000 * 60)) / 1000);
-    
-    let cdValue = [
-        cdYear, cdMonth, cdDays, cdHours, cdMins, cdSecs
-    ];
+    const a_second = 1000
+    const a_minute = (a_second * 60)
+    const an_hour = (a_minute * 60)
+    const hours_24 = (an_hour * 24) 
+    const a_year = 31622400000
 
+    let cdYear = Math.floor(diff/a_year);
+    let cdMonth = Math.floor(diff/2592000000);
+    let cdDays = Math.floor(diff / hours_24);
+    let cdHours = Math.floor(diff % hours_24 / an_hour);
+    let cdMins = Math.floor((diff % an_hour) / a_minute);
+    let cdSecs = Math.floor((diff % a_minute) / a_second);
+    
+    let cdValues = [
+        cdYear, // 0
+        cdMonth,  // 1
+        cdDays, // 2
+        cdHours, // 3
+        cdMins, // 4
+        cdSecs, //5
+    ]
+    
     let cdInput = document.querySelectorAll(".num");
-    cdInput[0].firstChild.data = cdYear;
-    cdInput[1].firstChild.data = cdMonth;
-    cdInput[2].firstChild.data = cdDays;
-    cdInput[3].firstChild.data = cdHours;
-    cdInput[4].firstChild.data = cdMins;
-    cdInput[5].firstChild.data = cdSecs;
+    for (let key in cdValues) {
+        cdInput[key].firstChild.data = cdValues[key];
+    }
     
 }, 1000);
