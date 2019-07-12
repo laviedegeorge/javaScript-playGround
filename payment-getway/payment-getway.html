@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Payment Getway</title>
+    <link rel="stylesheet" href="payment-getway.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="body">
+        <div class="main">
+            <div class="side-nav">
+                <div class="pics-cont"></div>
+                <div class="nav">
+                    <ul class="nav-list">
+                        <li data-paymethod="#payWithCard" class="active" > pay with card</li>
+                        <li data-paymethod="#payWithBank">pay with bank</li>
+                    </ul>
+                </div>
+                <div class="side-nav-footer">
+                    <div></div>
+                </div>
+            </div>
+            <div class="payment-view">
+                <div class="payment-view-opt active-div" id="payWithCard">
+                    <div class="name">
+                        <p>Jonathan Kent</p>
+                    </div>
+                    <form action="#" method="post">
+                        <label for="card-no">ENTER CARD NO.</label>
+                        <input type="text" name="card-no" id="cardNo" class="block" placeholder="1234 5678 9012 3456" maxlength="19">
+
+                        <div class="expire-cvv">
+                            <div class="expire-cont">
+                                <label for="expire">EXPIRATION </label>
+                                <input type="text" name="expire" id="expire" placeholder="12/34">
+                            </div>
+
+                            <div class="cvv-cont">
+                                <label for="cvv">CVV </label>
+                                <input type="text" name="cvv" id="cvv" placeholder="123">
+                            </div>
+                        </div>
+
+                        <label for="pin"> ENTER PIN </label>
+
+                        <input type="password" class="pin">
+                        <input type="password" class="pin">
+                        <input type="password" class="pin">
+                        <input type="password" class="pin">
+
+                        <button type="submit" class="pay">pay</button>
+                    </form>
+                </div>
+                <div class="payment-view-opt" id="payWithBank">
+                    <p>Lorem ipsum dolor, sit amet 
+                        consectetur adipisicing elit. 
+                        Debitis porro fugiat rerum eveniet aliquid
+                         velit earum cumque necessitatibus, non 
+                         recusandae asperiores exercitationem dolorum! Dolorem eos repellendus totam ad natus voluptatum?</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script src="payment-getway.js"></script>
+</html>
